@@ -106,12 +106,45 @@ function showPrompt()
 
 
 <body>
-    <h1> Dialogs </h1>
+    <h1> Dialogs </h1><br />
 
-    <a href='javascript:showAlert()'> Alert </a>
-    <a href='javascript:showConfirm()'> Confirm </a>
+    <h2>Alert:</h2>
+    <h4>Example:</h4>
+    <a href='javascript:showAlert()'> Alert </a><br /><br />
+    <h4>Code:</h4>
+    <code>
+        function showAlert()
+        {
+        dialog.show("alert", "This is an alert");
+        }
+    </code>
+    <br />
+    <h2>Confirm:</h2>
+    <h4>Example:</h4>
+    <a href='javascript:showConfirm()'> Confirm </a><br /><br />
+    <h4>Code:</h4>
+    <code>
+        function showConfirm()
+        {
+        var successCallback = function(){ alert("OK clicked") }
+        var failureCallback = function(){ alert("Cancel clicked") }
+        dialog.show("confirm", "This is an confirmation", successCallback, failureCallback);
+        }
+    </code>
+    <br />
+    <h2>Prompt:</h2>
+    <h4>Example:</h4>
     <a href='javascript:showPrompt()'> Prompt </a>
-
+    <h4>Code:</h4>
+    <code>
+        function showPrompt()
+        {
+        var successCallback = function(){ alert(dialog.value) }
+        var failureCallback = function(){}
+        dialog.show("prompt", "This is an prompt", successCallback, failureCallback);
+        }
+    </code>
+    <br />
 </body>
 
 </html>
